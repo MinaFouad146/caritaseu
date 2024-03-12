@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('eu.new_eu_file');
-// });
+Route::get('/hii', function () {
+    return view('auth.loginj-2');
+});
