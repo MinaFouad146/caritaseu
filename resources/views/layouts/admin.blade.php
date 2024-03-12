@@ -41,6 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             /* Light gray with 80% opacity */
         }
 
+
         .sidebar-light {
             background-color: #eff6fd;
             /* Light gray */

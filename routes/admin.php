@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/hii', function () {
-    return view('auth.loginj-2');
+    return view('auth.login');
 });
