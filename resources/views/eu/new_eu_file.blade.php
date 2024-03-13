@@ -21,6 +21,8 @@
 @endsection
 
 @section('content')
+    <h1>hiiiiiiiiiiiii</h1>
+    {{ optional(Auth::user())->name }}
 @endsection
 
 

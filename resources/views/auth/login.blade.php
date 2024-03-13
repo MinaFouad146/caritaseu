@@ -1,102 +1,74 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Caritas EU | Login</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Caritas EU | Sign in </title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/sign-in/">
 
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('assets/fonts/ionicons/2.0.1/css/ionicons.min.css') }}">
 
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('assets/css/bootstrap-4.0.0-dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!-- Google Font: Source Sans Pro -->
-    <link href="{{ asset('assets/fonts/SansPro/SansPro.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/fonts/SansPro/SansPro.min.css') }}" rel="stylesheet">
+
+
+
 
     <style>
-        .footer-bg {
-            background-color: red
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
         }
     </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('assets/css/signin.css') }}" rel="stylesheet">
 </head>
 
-<body class="login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+<body>
+
+
+
+    <img class="col-6 mb-4" src="{{ asset('assets/images/Caritas Egypt.png') }}" alt="Caritas Logo" width="600"
+        height="800">
+    <form class="col-6 form-signin" method="POST" action="{{ route('login') }}">
+        @csrf
+        <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required
+            autofocus>
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+
+        <div class="checkbox mb-3">
+
         </div>
-        <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
 
-                <form action="../../index3.html" method="post">
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                </form>
-
-
-
-            </div>
-            <!-- /.login-card-body -->
-        </div>
-    </div>
-    <!-- /.login-box -->
-
-
-
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right">
-            People Comes First
-        </div>
-
-        <div class="float-left">
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2021-2024 <a href="https://adminlte.io">Caritas - EU Project</a>.</strong> All
-            rights
-            reserved.
-        </div>
+    <footer>
+        <p class="mt-5 mb-3 text-danger text-center ">Caritas Egypt&copy; | People Comes First</p>
 
     </footer>
-
-    <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

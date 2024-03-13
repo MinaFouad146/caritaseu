@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/hii', function () {
-    return view('auth.login');
-});
+
+
+Route::get('login', [RegistrationController::class, 'loginShow'])->name('loginshow');
+Route::post('login', [RegistrationController::class, 'login'])->middleware('admin')->name('login');
+
+Route::get('register', [RegistrationController::class, 'UserRegistrationShow'])->name('registrationShow');
+Route::post('register', [RegistrationController::class, 'store'])->name('registration');
+
+
+
+
+Route::get('/eu-files', function () {
+    return view('eu.new_eu_file');
+})->name('home');

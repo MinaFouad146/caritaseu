@@ -8,8 +8,15 @@
                     <a href="index3.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link"><i class='fas fa-hands-helping text-info'>SOP</i> </a>
                 </li>
+
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link"><i class='fas fa-hands-helping text-info'>
+                        </i> </a>
+                </li>
+
+
             </ul>
 
             <!-- SEARCH FORM -->
@@ -120,5 +127,18 @@
                     <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
                             class="fas fa-th-large"></i></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+                            class="fa fa-sign-out text-danger" style="font-size:18px;">Sign Out</i></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+                        <i class="fa fa-sign-out text-danger"
+                            style="font-size:18px;">{{ optional(Auth::user())->name }}</i></a>
+                </li>
+
+
+
             </ul>
         </nav>

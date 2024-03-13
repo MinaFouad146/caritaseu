@@ -23,26 +23,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap_rtl-v4.2.1/custom_rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/mycustomstyle.css') }}">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .full-body-background {
+            position: relative;
+        }
+
+        /*
+        .full-body-background:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('{{ asset('assets/images/prints.png') }}');
+            background-color: white;
+            background-repeat: repeat;
+            background-size: 35%;
+            background-position: center;
+            opacity: 0.2;
+            /* Adjust the opacity as needed */
+        /* z-index: -1; */
+
+
+        /* .full-body-background {
             background-color: rgb(254, 253, 253);
             background-image: url('{{ asset('assets/images/prints.png') }}');
             background-repeat: repeat;
             background-position: center;
             /* background-size: cover; */
-            background-size: 35%;
+        /* background-size: 35%;
             height: 100vh;
-            opacity: 0.1
-        }
-
-        .transparent-background {
-            background-color: rgba(255, 251, 251, 0.8);
-            /* Light gray with 80% opacity */
-        }
-
-
-        .sidebar-light {
+            opacity: 0.1 */
+        */ .sidebar-light {
             background-color: #eff6fd;
             /* Light gray */
             /* background-color: #e9ecef;
@@ -70,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @include('eu.parts.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper  full-body-background transparent-background">
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
