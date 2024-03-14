@@ -80,7 +80,7 @@
             required>
 
         {{-- ######################### Group ######################## --}}
-        <label for="group">Full Name</label>
+        <label for="group">Employee Group</label>
         <input type="text" name="group" id="group" class="form-control" placeholder="enter Group no" required>
         @if ($errors->has('group'))
             <span class="text-danger">{{ $errors->first('group') }}</span>

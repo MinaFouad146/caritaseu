@@ -55,19 +55,21 @@
         <label for="email" class="sr-only">Email address</label>
         <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required
             autofocus>
+        @error('email')
+            <span class="text-danger"> {{ $message }}</span>
+        @enderror
 
         <label for="password" class="sr-only">Password</label>
         <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+        @error('password')
+            <span class="text-danger"> {{ $message }}</span>
+        @enderror
 
-        <div class="checkbox mb-3">
-
-        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
 
     <footer>
         <p class="mt-5 mb-3 text-danger text-center ">Caritas Egypt&copy; | People Comes First</p>
-
     </footer>
 
 </body>
