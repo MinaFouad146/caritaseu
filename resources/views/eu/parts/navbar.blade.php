@@ -11,10 +11,6 @@
                     <a href="#" class="nav-link"><i class='fas fa-hands-helping text-info'>SOP</i> </a>
                 </li>
 
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link"><i class='fas fa-hands-helping text-info'>
-                        </i> </a>
-                </li>
 
 
             </ul>
@@ -128,15 +124,30 @@
                             class="fas fa-th-large"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
-                            class="fa fa-sign-out text-danger" style="font-size:18px;">Sign Out</i></a>
+                    <a class="nav-link" href="{{ asset(route('eu.logout')) }}"><i class="fa fa-sign-out text-danger"
+                            style="font-size:16px;">Sign Out</i></a>
+                </li>
+                @if (Auth::guard('admin')->user()->group == 999)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ asset(route('eu.registrationShow')) }}"><i
+                                class="fas fa-user-alt text-primary" style="font-size:16px;">New User</i></a>
+                    </li>
+                @endif
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        @if (Auth::guard('admin')->check())
+                            Hello, {{ Auth::guard('admin')->user()->name }}
+                        @else
+                            Guest
+                        @endif
+                    </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-                        <i class="fa fa-sign-out text-danger"
-                            style="font-size:18px;">{{ optional(Auth::user())->name }}</i></a>
-                </li>
+
+
+
+
+
 
 
 

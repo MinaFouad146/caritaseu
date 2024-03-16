@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\eu\homeController;
 use App\Http\Controllers\eu\RegistrationController;
+use App\Http\Controllers\eu\loginRegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +15,41 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// ####################### Guest Users ###########################################
 
+
+
+
+
+
+
+
+// ####################### Guest Users ###################################
 Route::group(['namespace' => 'eu', 'prefix' => 'eu', 'middleware' => 'guest:admin'], function () {
-
-    Route::get('login', [RegistrationController::class, 'loginShow'])->name('eu.loginshow');
-    Route::post('login', [RegistrationController::class, 'login'])->middleware('admin')->name('eu.login');
-
-    Route::get('register', [RegistrationController::class, 'UserRegistrationShow'])->name('registrationShow');
-    Route::post('register', [RegistrationController::class, 'store'])->name('registration');
+    Route::get('login', [loginRegisterController::class, 'loginShow'])->name('eu.loginshow');
+    Route::post('login', [loginRegisterController::class, 'login'])->name('eu.login');
 });
+
+// ####################### Authinticated Users ###################################
+Route::group(['namespace' => 'eu', 'prefix' => 'eu', 'middleware' => 'auth:admin'], function () {
+    Route::get('logout', [loginRegisterController::class, 'logout'])->name('eu.logout');
+});
+
+// ####################### Super User ###################################
+Route::group(['namespace' => 'eu', 'prefix' => 'eu', 'middleware' => ['auth:admin', 'checkUserGroup:super']], function () {
+    Route::get('register', [loginRegisterController::class, 'UserRegistrationShow'])->name('eu.registrationShow');
+    Route::post('register', [loginRegisterController::class, 'store'])->name('eu.registration');
+});
+
+// ####################### Social Department ###################################
+Route::group(['namespace' => 'eu', 'prefix' => 'eu', 'middleware' => ['auth:admin', 'checkUserGroup:social']], function () {
+    Route::get('index', [homeController::class, 'index'])->name('eu.homeShow');
+});
+
+
+
+
+
 
 
 

@@ -48,7 +48,7 @@
 
     <img class="col-6 mb-4" src="{{ asset('assets/images/Caritas Egypt.png') }}" alt="Caritas Logo" width="600"
         height="800">
-    <form class="col-6 form-signin" action="{{ route('registration') }}" method="POST">
+    <form class="col-6 form-signin" action="{{ route('eu.registration') }}" method="POST">
         @csrf
 
         <h1 class="h3 mb-3 font-weight-normal">User Registration</h1>

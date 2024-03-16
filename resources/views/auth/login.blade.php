@@ -48,7 +48,7 @@
 
     <img class="col-6 mb-4" src="{{ asset('assets/images/Caritas Egypt.png') }}" alt="Caritas Logo" width="600"
         height="800">
-    <form class="col-6 form-signin" method="POST" action="{{ route('login') }}">
+    <form class="col-6 form-signin" method="POST" action="{{ route('eu.login') }}">
         @csrf
         <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
 
