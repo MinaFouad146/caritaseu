@@ -3,6 +3,8 @@
 use App\Http\Controllers\eu\homeController;
 use App\Http\Controllers\eu\RegistrationController;
 use App\Http\Controllers\eu\loginRegisterController;
+use App\Http\Controllers\eu\social\EuFileController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +46,8 @@ Route::group(['namespace' => 'eu', 'prefix' => 'eu', 'middleware' => ['auth:admi
 // ####################### Social Department ###################################
 Route::group(['namespace' => 'eu', 'prefix' => 'eu', 'middleware' => ['auth:admin', 'checkUserGroup:social']], function () {
     Route::get('index', [homeController::class, 'index'])->name('eu.homeShow');
+
+    Route::get('eufilesshow', [EuFileController::class, 'show'])->name('eu.filesshow');
 });
 
 

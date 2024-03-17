@@ -105,13 +105,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
+                <div class="container"
+                    style="background-image: url(@yield('backgroundimg'));min-height:600px;background-size:40%;background-repeat: repeat;">
 
-                        @yield('content')
 
-                        <!-- /.col-md-6 -->
-                    </div>
+                    @yield('content')
+
                     <!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
