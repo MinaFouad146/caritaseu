@@ -19,12 +19,15 @@ return new class extends Migration
             $table->string('Open_File_Location')->nullable();
             $table->string('Referral_From')->nullable();
             $table->string('Referral_no')->nullable();
-            $table->string('city')->nullable();
             $table->string('area')->nullable();
             $table->text('address')->nullable();
 
+            $table->foreignId('city_id')
+                ->constrained('cities')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+
             $table->foreignId('created_by')
-                ->nullable()
                 ->constrained('admins')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');

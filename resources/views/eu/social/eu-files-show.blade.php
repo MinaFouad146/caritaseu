@@ -40,6 +40,7 @@
                         <th>city</th>
                         <th>area</th>
                         <th>address</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,9 +51,24 @@
                             <td> {{ $file->Open_File_Location }}</td>
                             <td> {{ $file->Referral_From }}</td>
                             <td> {{ $file->Referral_no }}</td>
-                            <td> {{ $file->city }}</td>
+                            <td>
+                                @if ($file->city_id)
+                                    {{ $file->city->name }}
+                                @endif
+                            </td>
                             <td> {{ $file->area }}</td>
                             <td> {{ $file->address }}</td>
+                            <td>
+                                <a class="btn btn-sm btn-success btn-edit" data-toggle="modal" data-target="#editCustomer"
+                                    href="" data-cust="#">Edit</a>
+
+                                <a class="btn btn-sm btn-info btn-edit" href="#">show</a>
+
+                                <button data-url="#" data-toggle="modal" data-target="#deleteModal"
+                                    class='btn btni btn-danger btn-xs btn-delete delete-item text-white'
+                                    data-toggle="tooltip" data-placement="bottom" title="delete"><i class="fa fa-trash"></i>
+                                </button>
+                            </td>
                         </tr>
                     @endforeach
 

@@ -24,9 +24,10 @@ class EuFileSeeder extends Seeder
                     'Open_File_Location' => 'office',
                     'Referral_From' => 'UNHCR',
                     'Referral_no' => 1,
-                    'city' => 1,
+                    'city_id' => 1,
                     'area' => 'Sidi Bishr',
                     'address' => '50 Manshia st.',
+                    'created_by' => 1,
                 ],
 
             ];

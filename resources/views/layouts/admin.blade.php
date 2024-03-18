@@ -84,7 +84,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @include('eu.parts.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper"
+            style="background-image: url(@yield('backgroundimg'));min-height:600px;background-size:40%;background-repeat: repeat;">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
@@ -105,8 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <div class="content">
-                <div class="container"
-                    style="background-image: url(@yield('backgroundimg'));min-height:600px;background-size:40%;background-repeat: repeat;">
+                <div class="container">
 
 
                     @yield('content')
