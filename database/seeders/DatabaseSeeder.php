@@ -10,6 +10,8 @@ use App\Models\CountryModel;
 use App\Models\EuFile;
 use App\Models\EuFileModel;
 use App\Models\IndividualModel;
+use App\Models\SocialAssessmentModel;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -44,5 +46,8 @@ class DatabaseSeeder extends Seeder
 
         if (!optional(IndividualModel::first())->exists())
             $this->call(IndividualsSeeder::class);
+
+        if (!optional(SocialAssessmentModel::first())->exists())
+            $this->call(SocialAssessmentSeeder::class);
     }
 }

@@ -8,13 +8,14 @@ use App\Models\CityModel;
 use App\Models\CountryModel;
 use App\Models\EuFileModel;
 use App\Models\IndividualModel;
+use App\Models\SocialAssessmentModel;
 
 class EuFileController extends Controller
 {
     // EU FIles List
     public function show()
     {
-        $euFiles = EuFileModel::with('created_by', 'city')->orderBy('eu_no', 'desc')->paginate(30);
+        $euFiles = EuFileModel::with('created_by', 'city')->orderBy('id', 'desc')->paginate(30);
         $cities = CityModel::orderBy('name', 'asc')->get();
         $countries = CountryModel::orderBy('name', 'asc')->get();
 
@@ -35,8 +36,17 @@ class EuFileController extends Controller
 
     public function singleEuFileShow(EuFileModel $eufile)
     {
-        $inds = IndividualModel::with('created_by', 'nationality')->where('eu_no_id', $eufile->id)->orderBy('ind_id', 'asd')->paginate(30);
+        $inds = IndividualModel::with('created_by', 'nationality')->where('eu_no_id', $eufile->id)->orderBy('id', 'asc')->paginate(30);
+        $eufile = EuFileModel::with('created_by', 'city')->find($eufile->id);
+        $socialassessment = SocialAssessmentModel::with('created_by', 'eu_no')
+            ->where('eu_no_id', $eufile->id)
+            ->orderByDesc('id')
+            ->first();
 
-        return view('admin.master_invoice.index', ['data' => $master_invoices, 'customer' => $customer]);
+        return view('eu.social.eu-file-indetail', [
+            'Individuals' => $inds,
+            'eufile' => $eufile,
+            'socialassessment' => $socialassessment
+        ]);
     }
 }

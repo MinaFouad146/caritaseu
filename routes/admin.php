@@ -48,7 +48,7 @@ Route::group(['namespace' => 'eu', 'prefix' => 'eu', 'middleware' => ['auth:admi
     Route::get('index', [homeController::class, 'index'])->name('eu.homeShow');
 
     Route::get('eu-files-list', [EuFileController::class, 'show'])->name('eu.filesshow');
-    Route::get('single-eu-file-show', [EuFileController::class, 'show'])->name('eu.single-eu-file-show');
+    Route::get('single-eu-file-show/{eufile}', [EuFileController::class, 'singleEuFileShow'])->name('eu.single-eu-file-show');
 });
 
 

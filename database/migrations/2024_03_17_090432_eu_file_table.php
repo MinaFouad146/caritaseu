@@ -15,10 +15,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('eu_files', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
 
-            // $table->bigInteger('eu_no')->autoIncrement()->startingValue(999);
-            $table->bigIncrements('eu_no');
+            $table->id();
 
             $table->string('Open_File_Location')->nullable();
             $table->string('Referral_From')->nullable();

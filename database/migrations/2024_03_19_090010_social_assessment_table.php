@@ -14,24 +14,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('individuals', function (Blueprint $table) {
+        Schema::create('social_assessments', function (Blueprint $table) {
 
             // $table->bigIncrements('ind_id');
             $table->id();
 
+            $table->string('family_income_resources')->nullable();
+            $table->string('family_expenses')->nullable();
+            $table->string('accommodation_type')->nullable();
+            $table->text('family_summary')->nullable();
+            $table->string('family_level')->nullable();
+            $table->float('medical_contributions')->nullable();
+            $table->string('home_visit')->nullable();
 
-            $table->string('name')->nullable();
-            $table->string('personal_info')->nullable();
-            $table->string('education_info')->nullable();
-            $table->string('work_info')->nullable();
+
 
             $table->foreignId('eu_no_id')
                 ->constrained('eu_files')
-                ->onUpdate('cascade')
-                ->onDelete('restrict');
-
-            $table->foreignId('country_id')
-                ->constrained('countries')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
 
@@ -52,6 +51,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('individuals');
+        Schema::dropIfExists('social_assessments');
     }
 };

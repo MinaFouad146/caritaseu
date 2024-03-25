@@ -12,7 +12,7 @@ class EuFileModel extends Model
     protected $table = 'eu_files';
     public $timestamps = true;
     protected $fillable = [
-        'eu_no', 'Open_File_Location', 'Referral_From', 'Referral_no', 'city_id',  'area', 'address', 'created_at', 'updated_at'
+        'id', 'Open_File_Location', 'Referral_From', 'Referral_no', 'city_id',  'area', 'address', 'created_at', 'updated_at'
     ];
 
     public function city()

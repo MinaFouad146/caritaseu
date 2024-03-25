@@ -5,18 +5,16 @@
 @endsection
 
 @section('contentHeader')
-    EU Files
+    EU File : {{ $eufile->id }}
 @endsection
 
 
 {{-- ################################## breadcrumb-item ################## --}}
 
 @section('contentHeaderLink')
-    EU Files
 @endsection
 
 @section('contentHeaderActive')
-    EU File no ########
 @endsection
 
 {{-- ################################## Content ################## --}}
@@ -24,25 +22,18 @@
     {{ asset('assets/images/prints2.png') }}
 @endsection
 
-@section('styles')
-    <style>
-        .content-wrapper {
-            background-repeat: repeat;
-            background-size: 80%;
-            background-attachment: fixed;
-            height: 100vh;
-        }
-    </style>
-@endsection
+
 
 @section('content')
+    {{-- //////////////////////////////////////  Case Individuals Data --}}
+
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">EU no #######</h3>
+        <div class="card-header text-left">
+            <h4 class=""> Individuls</h4>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="example2" class="table table-bordered table-hover">
+            <table id="example2" class="table table-bordered table-hover table-sm">
                 <thead>
                     <tr>
                         <th>EU NO</th>
@@ -55,20 +46,21 @@
                         <th>Action</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    @foreach ($euFiles as $file)
+                    @foreach ($Individuals as $ind)
                         <tr>
-                            <td> {{ $file->eu_no }}</td>
-                            <td> {{ $file->Open_File_Location }}</td>
-                            <td> {{ $file->Referral_From }}</td>
-                            <td> {{ $file->Referral_no }}</td>
+                            <td> {{ $ind->eu_no->id }}</td>
+                            <td> {{ $ind->id }}</td>
+                            <td> {{ $ind->name }}</td>
+                            <td> {{ $ind->personal_info }}</td>
+                            <td> {{ $ind->education_info }}</td>
+                            <td> {{ $ind->work_info }}</td>
                             <td>
-                                @if ($file->city_id)
-                                    {{ $file->city->name }}
+                                @if ($ind->country_id)
+                                    {{ $ind->nationality->name }}
                                 @endif
                             </td>
-                            <td> {{ $file->area }}</td>
-                            <td> {{ $file->address }}</td>
                             <td>
                                 <a class="btn btn-sm btn-success btn-edit" data-toggle="modal" data-target="#editCustomer"
                                     href="" data-cust="#">Edit</a>
@@ -86,6 +78,73 @@
         </div>
         <!-- /.card-body -->
     </div>
+
+
+    {{-- //////////////////////////////////////  Last Summary Data --}}
+    <div class="card">
+        <div class="card-header text-left">
+            <h4 class=""> Social Vulnerability Assessment</h4>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover table-sm">
+
+                <tr>
+                    <th class="table-info">Name</th>
+                    <td>{{ $socialassessment->family_summary }}</td>
+                    <th class="table-info">Address</th>
+                    <td>{{ $socialassessment->eu_no->id }}</td>
+                    <th class="table-info">Address</th>
+                    <td>{{ $socialassessment->family_level }}</td>
+                </tr>
+
+
+
+
+                {{-- <thead>
+                    <tr>
+                        <th>EU NO</th>
+                        <th>indvidual id</th>
+                        <th>name</th>
+                        <th>personal_info</th>
+                        <th>education_info</th>
+                        <th>work_info</th>
+                        <th>Nationality</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach ($Individuals as $ind)
+                        <tr>
+                            <td> {{ $ind->eu_no->id }}</td>
+                            <td> {{ $ind->id }}</td>
+                            <td> {{ $ind->name }}</td>
+                            <td> {{ $ind->personal_info }}</td>
+                            <td> {{ $ind->education_info }}</td>
+                            <td> {{ $ind->work_info }}</td>
+                            <td>
+                                @if ($ind->country_id)
+                                    {{ $ind->nationality->name }}
+                                @endif
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-success btn-edit" data-toggle="modal" data-target="#editCustomer"
+                                    href="" data-cust="#">Edit</a>
+
+                                <a class="btn btn-sm btn-info btn-edit" href="#">show</a>
+
+                                <button data-url="#" data-toggle="modal" data-target="#deleteModal"
+                                    class='btn btni btn-danger btn-xs btn-delete delete-item text-white'
+                                    data-toggle="tooltip" data-placement="bottom" title="delete"><i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach --}}
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
 @endsection
 
 
@@ -93,6 +152,14 @@
 
 {{-- ################################## Styles & Scripts ################## --}}
 @section('styles')
+    <style>
+        .content-wrapper {
+            background-repeat: repeat;
+            background-size: 80%;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+    </style>
 @endsection
 
 

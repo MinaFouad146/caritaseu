@@ -72,7 +72,8 @@
                                 <a class="btn btn-sm btn-success btn-edit" data-toggle="modal" data-target="#editCustomer"
                                     href="" data-cust="#">Edit</a>
 
-                                <a class="btn btn-sm btn-info btn-edit" href="#">show</a>
+                                <a class="btn btn-sm btn-info btn-edit"
+                                    href="{{ route('eu.single-eu-file-show', $file->id) }}">show</a>
 
                                 <button data-url="#" data-toggle="modal" data-target="#deleteModal"
                                     class='btn btni btn-danger btn-xs btn-delete delete-item text-white'

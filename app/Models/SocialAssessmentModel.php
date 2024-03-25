@@ -5,21 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class IndividualModel extends Model
+class SocialAssessmentModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'individuals';
+    protected $table = 'social_assessments';
     public $timestamps = true;
     protected $fillable = [
-        'id', 'name', 'personal_info', 'education_info', 'work_info', 'eu_no_id', 'country_id', 'created_by', 'created_at', 'updated_at'
+        'id', 'family_income_resources', 'family_expenses', 'accommodation_type', 'family_summary', 'family_level', 'medical_contributions', 'home_visit', 'eu_no_id', 'created_by', 'created_at', 'updated_at'
     ];
 
-
-    public function nationality()
-    {
-        return $this->belongsTo(CountryModel::class, 'country_id');
-    }
 
     public function eu_no()
     {

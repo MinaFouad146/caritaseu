@@ -20,7 +20,7 @@ class EuFileSeeder extends Seeder
         $eufile =
             [
                 [
-                    'eu_no' => 999,
+                    'id' => 999,
                     'Open_File_Location' => 'office',
                     'Referral_From' => 'UNHCR',
                     'Referral_no' => 1,
