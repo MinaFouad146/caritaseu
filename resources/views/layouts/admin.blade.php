@@ -21,9 +21,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('assets/fonts/SansPro/SansPro.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap_rtl-v4.2.1/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap_rtl-v4.2.1/custom_rtl.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/mycustomstyle.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/mycustomstyle.css') }}">
+
     <style>
         .full-body-background {
             position: relative;
@@ -84,8 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @include('eu.parts.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper"
-            style="background-image: url(@yield('backgroundimg'));min-height:600px;background-size:40%;background-repeat: repeat;">
+        <div class="content-wrapper" style="background-image: url(@yield('backgroundimg'))">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">

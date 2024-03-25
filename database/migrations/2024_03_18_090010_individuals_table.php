@@ -14,20 +14,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('eu_files', function (Blueprint $table) {
+        Schema::create('individuals', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            // $table->bigInteger('eu_no')->autoIncrement()->startingValue(999);
-            $table->bigIncrements('eu_no');
+            $table->bigIncrements('ind_id');
 
-            $table->string('Open_File_Location')->nullable();
-            $table->string('Referral_From')->nullable();
-            $table->string('Referral_no')->nullable();
-            $table->string('area')->nullable();
-            $table->text('address')->nullable();
+            $table->string('name')->nullable();
+            $table->string('personal_info')->nullable();
+            $table->string('education_info')->nullable();
+            $table->string('work_info')->nullable();
 
-            $table->foreignId('city_id')
-                ->constrained('cities')
+            $table->unsignedBigInteger('eu_no_id');
+            $table->foreign('eu_no_id')->references('eu_no')->on('eu_files');
+
+
+
+            $table->foreignId('country_id')
+                ->constrained('countries')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
 
@@ -40,7 +43,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE eu_files AUTO_INCREMENT = 999;");
+        DB::statement("ALTER TABLE individuals AUTO_INCREMENT = 999;");
     }
 
     /**
@@ -50,6 +53,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eu_file');
+        Schema::dropIfExists('individuals');
     }
 };

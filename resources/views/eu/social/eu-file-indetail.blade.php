@@ -16,6 +16,7 @@
 @endsection
 
 @section('contentHeaderActive')
+    EU File no ########
 @endsection
 
 {{-- ################################## Content ################## --}}
@@ -37,7 +38,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">DataTable with minimal features & hover style</h3>
+            <h3 class="card-title">EU no #######</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -45,12 +46,12 @@
                 <thead>
                     <tr>
                         <th>EU NO</th>
-                        <th>Open Location</th>
-                        <th>Referral_From(s)</th>
-                        <th>Referral_no</th>
-                        <th>city</th>
-                        <th>area</th>
-                        <th>address</th>
+                        <th>indvidual id</th>
+                        <th>name</th>
+                        <th>personal_info</th>
+                        <th>education_info</th>
+                        <th>work_info</th>
+                        <th>Nationality</th>
                         <th>Action</th>
                     </tr>
                 </thead>

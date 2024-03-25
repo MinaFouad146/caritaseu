@@ -9,6 +9,7 @@ use App\Models\CityModel;
 use App\Models\CountryModel;
 use App\Models\EuFile;
 use App\Models\EuFileModel;
+use App\Models\IndividualModel;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -40,5 +41,8 @@ class DatabaseSeeder extends Seeder
 
         if (!optional(EuFileModel::first())->exists())
             $this->call(EuFileSeeder::class);
+
+        if (!optional(IndividualModel::first())->exists())
+            $this->call(IndividualsSeeder::class);
     }
 }

@@ -17,7 +17,7 @@
 
 {{-- ################################## Content ################## --}}
 @section('backgroundimg')
-    {{-- {{ asset('assets/images/prints.png') }} --}}
+    {{ asset('assets/images/avatar.png') }}
 @endsection
 
 @section('content')
