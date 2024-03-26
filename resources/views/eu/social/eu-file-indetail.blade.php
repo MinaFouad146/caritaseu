@@ -27,7 +27,7 @@
 @section('content')
     {{-- //////////////////////////////////////  Case Individuals Data --}}
 
-    <div class="card">
+    <div class="card card-warning">
         <div class="card-header text-left">
             <h4 class=""> Individuls</h4>
         </div>
@@ -81,7 +81,7 @@
 
 
     {{-- //////////////////////////////////////  Last Summary Data --}}
-    <div class="card">
+    <div class="card card-success">
         <div class="card-header text-left">
             <h4 class=""> Social Vulnerability Assessment</h4>
         </div>
@@ -90,12 +90,23 @@
             <table id="example2" class="table table-bordered table-hover table-sm">
 
                 <tr>
-                    <th class="table-info">Name</th>
-                    <td>{{ $socialassessment->family_summary }}</td>
-                    <th class="table-info">Address</th>
-                    <td>{{ $socialassessment->eu_no->id }}</td>
-                    <th class="table-info">Address</th>
+                    <th class="table-info">Family Income</th>
+                    <td>{{ $socialassessment->family_income_resources }}</td>
+                    <th class="table-info">Family Expenses</th>
+                    <td>{{ $socialassessment->family_expenses }}</td>
+                    <th class="table-info">Accommodation Type</th>
+                    <td>{{ $socialassessment->accommodation_type }}</td>
+                </tr>
+                <tr>
+                    <th class="table-info">Level</th>
                     <td>{{ $socialassessment->family_level }}</td>
+                    <th class="table-info">Medical Contributions</th>
+                    <td>{{ $socialassessment->medical_contributions }}</td>
+                    <th class="table-info">Social Worker</th>
+                    <td>{{ $socialassessment->createdby->name }}</td>
+                </tr>
+                <tr>
+                    <td colspan="6"> {{ $socialassessment->family_summary }}</td>
                 </tr>
 
 

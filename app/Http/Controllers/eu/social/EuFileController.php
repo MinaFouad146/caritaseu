@@ -36,9 +36,9 @@ class EuFileController extends Controller
 
     public function singleEuFileShow(EuFileModel $eufile)
     {
-        $inds = IndividualModel::with('created_by', 'nationality')->where('eu_no_id', $eufile->id)->orderBy('id', 'asc')->paginate(30);
-        $eufile = EuFileModel::with('created_by', 'city')->find($eufile->id);
-        $socialassessment = SocialAssessmentModel::with('created_by', 'eu_no')
+        $inds = IndividualModel::with('createdby', 'nationality')->where('eu_no_id', $eufile->id)->orderBy('id', 'asc')->paginate(30);
+        $eufile = EuFileModel::with('createdby', 'city')->find($eufile->id);
+        $socialassessment = SocialAssessmentModel::with('createdby', 'eu_no')
             ->where('eu_no_id', $eufile->id)
             ->orderByDesc('id')
             ->first();

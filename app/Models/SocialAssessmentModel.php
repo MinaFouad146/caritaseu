@@ -21,7 +21,7 @@ class SocialAssessmentModel extends Model
         return $this->belongsTo(EuFileModel::class, 'eu_no_id');
     }
 
-    public function created_by()
+    public function createdby()
     {
         return $this->belongsTo(Admin::class, 'created_by');
     }

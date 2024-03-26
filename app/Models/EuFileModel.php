@@ -25,7 +25,7 @@ class EuFileModel extends Model
         return $this->belongsTo(CountryModel::class, 'country_id');
     }
 
-    public function created_by()
+    public function createdby()
     {
         return $this->belongsTo(Admin::class, 'created_by');
     }

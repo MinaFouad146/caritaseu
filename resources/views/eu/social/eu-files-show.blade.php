@@ -57,7 +57,7 @@
                 <tbody>
                     @foreach ($euFiles as $file)
                         <tr>
-                            <td> {{ $file->eu_no }}</td>
+                            <td> {{ $file->id }}</td>
                             <td> {{ $file->Open_File_Location }}</td>
                             <td> {{ $file->Referral_From }}</td>
                             <td> {{ $file->Referral_no }}</td>
