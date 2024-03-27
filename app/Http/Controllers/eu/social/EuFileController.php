@@ -15,7 +15,7 @@ class EuFileController extends Controller
     // EU FIles List
     public function show()
     {
-        $euFiles = EuFileModel::with('created_by', 'city')->orderBy('id', 'desc')->paginate(30);
+        $euFiles = EuFileModel::with('createdby', 'city')->orderBy('id', 'desc')->paginate(30);
         $cities = CityModel::orderBy('name', 'asc')->get();
         $countries = CountryModel::orderBy('name', 'asc')->get();
 
